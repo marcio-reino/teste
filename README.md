@@ -11,7 +11,9 @@ This repository provides a basic structure for an ERP application using React, T
    ```bash
    cd server && npm install
    ```
+
 2. Configure environment variables by copying `.env.example` to `.env` and editing the values.
+
 3. Run Prisma migrations (after setting up your database):
    ```bash
    npx prisma migrate dev --name init
