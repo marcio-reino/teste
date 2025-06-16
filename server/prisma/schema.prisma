@@ -8,10 +8,19 @@ datasource db {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  uuid      String   @unique
-  name      String
-  cellphone String
-  email     String   @unique
-  status    Boolean  @default(true)
+  id          Int         @id @default(autoincrement())
+  uuid        String      @unique
+  ft_id       Int?
+  first_name  String?     @db.VarChar(50)
+  last_name   String?     @db.VarChar(50)
+  cellphone   String?     @db.VarChar(20)
+  email       String?     @unique @db.VarChar(150)
+  status      UserStatus? @default(active)
+  created_at  DateTime?   @default(now())
+  updated_at  DateTime?   @default(now()) @updatedAt
+}
+
+enum UserStatus {
+  active
+  inactive
 }
