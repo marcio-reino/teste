@@ -13,6 +13,7 @@ This repository provides a basic structure for an ERP application using React, T
    ```
 
 2. Configure environment variables by copying `.env.example` to `.env` and editing the values.
+   The server expects a `JWT_SECRET` variable used to sign authentication tokens.
 
 3. Run Prisma migrations (after setting up your database):
    ```bash
